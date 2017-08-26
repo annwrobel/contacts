@@ -11,6 +11,11 @@ public class JDBC {
      * @param args
      */
     public static void main(String[] args) {
+        getAllContacts();
+
+    }
+
+    private static void getAllContacts() {
         String polaczenieURL = "jdbc:mysql://localhost:3306/lista_ani?user=root&password=password";
         //Tworzymy proste zapytanie doa bazy danych
         String query = "Select * FROM moje_kontakty";
@@ -41,8 +46,8 @@ public class JDBC {
             System.out.println("SQLState: " + wyjatek.getSQLState());
             System.out.println("VendorError: " + wyjatek.getErrorCode());
         }
-
     }
+
     static void wyswietlDaneZBazy(ResultSet rs){
         try{
             daneZBazy = rs.getString(1);
